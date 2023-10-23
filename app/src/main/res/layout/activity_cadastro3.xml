@@ -81,6 +81,29 @@
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
 
+        <!-- CircularRangeSeekBar -->
+        <androidx.appcompat.app.AppCompatActivity
+            android:id="@+id/circularSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:crs_start_angle="135"
+            app:crs_end_angle="45"
+            app:crs_thumb_size="50dp"
+            app:crs_thumb_color="#FF5722"
+            app:crs_ring_color="#FF5722"
+            app:crs_ring_progress_color="#4CAF50"
+            app:crs_ring_width="10dp"
+            app:crs_ring_progress_width="10dp"
+            app:crs_start_thumb_hidden="false"
+            app:crs_max="100"
+            app:crs_min="0"
+            app:crs_progress="50"
+            app:crs_draw_ring_progress="true"
+            app:crs_draw_ring="true"
+            app:crs_on_progress_change_listener="@{viewModel::onProgressChanged}"
+            app:crs_on_start_thumb_hide_listener="@{viewModel::onStartThumbHide}"
+            app:crs_on_start_thumb_show_listener="@{viewModel::onStartThumbShow}"
+            />
 
     </LinearLayout>
 
