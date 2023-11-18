@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "955819728529",
-    "project_id": "hystera-1a6e7",
-    "storage_bucket": "hystera-1a6e7.appspot.com"
+    "project_number": "929513594656",
+    "project_id": "hystera-401710",
+    "storage_bucket": "hystera-401710.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:955819728529:android:432607e24c69bdac29a930",
+        "mobilesdk_app_id": "1:929513594656:android:3fc84b0690f153ce89c145",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "929513594656-phk5uhsn3u8a4f3n22qvqmukiskl9s1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDJY1cEnxgwKpWiF0fJlqb4YRFn9-uXk78"
+          "current_key": "AIzaSyDsvArrK9dJ6IP4L5bDzHUcVcNZTI9Z3bk"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929513594656-phk5uhsn3u8a4f3n22qvqmukiskl9s1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
