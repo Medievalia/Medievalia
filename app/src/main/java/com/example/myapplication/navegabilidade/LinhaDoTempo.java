@@ -174,7 +174,11 @@ public class LinhaDoTempo extends AppCompatActivity {
             // Se a diferença for negativa, o período já começou
             if (diferencaDias >= 0) {
                 // Seu seekBar tem um máximo de 100, ajuste o progresso conforme necessário
+                if (diferencaDias == 5) {
+                    notificarProximaMenstruacao();
+                }
                 int progresso = (int) (100 - diferencaDias);
+
                 seekBar.setProgress(progresso);
             }
         } catch (ParseException e) {
@@ -206,5 +210,36 @@ public class LinhaDoTempo extends AppCompatActivity {
 
         Date dataDeHoje = calendar.getTime();
         return dateFormat.format(dataDeHoje);
+    }
+
+
+    private void notificarProximaMenstruacao() {
+        NotificationHelper notificationHelper = new NotificationHelper(this);
+        notificationHelper.showNotification("Próxima Menstruação", "Faltam 5 dias para a próxima menstruação");
+    }
+
+    private void notificarFaltaUmDia() {
+        NotificationHelper notificationHelper = new NotificationHelper(this);
+        notificationHelper.showNotification("Próxima Menstruação", "Falta 1 dia para a menstruação");
+    }
+
+    private void notificarPeriodoFertil() {
+        NotificationHelper notificationHelper = new NotificationHelper(this);
+        notificationHelper.showNotification("Período Fértil", "Você acabou de entrar no seu período fértil");
+    }
+
+    private int calcularDiferencaDias(String dataInicio, String dataFim) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        try {
+            Date dataInicioDate = dateFormat.parse(dataInicio);
+            Date dataFimDate = dateFormat.parse(dataFim);
+
+            long diferencaMilissegundos = dataFimDate.getTime() - dataInicioDate.getTime();
+            return (int) (diferencaMilissegundos / (1000 * 60 * 60 * 24)); // Converte para dias
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return -1; // Retorna -1 em caso de erro
+        }
     }
 }
